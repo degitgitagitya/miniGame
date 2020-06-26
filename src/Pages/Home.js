@@ -9,7 +9,7 @@ const Home = ({ location, history }) => {
   const [status, setStatus] = useState(0);
   const [result, setResult] = useState("");
   const [counterResult, setCounterResult] = useState(0);
-  const [timer, setTimer] = useState(5);
+  const [timer, setTimer] = useState(3);
   const [selected, setSelected] = useState("Random");
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
