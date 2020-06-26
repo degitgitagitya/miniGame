@@ -5,6 +5,7 @@ import Icon from "../Components/Icon";
 
 const LandingPage = () => {
   const [name, setName] = useState("");
+  const [room, setRoom] = useState("");
 
   return (
     <div className="container">
@@ -24,11 +25,21 @@ const LandingPage = () => {
           className="form-control w-25 mb-3"
         />
       </div>
+      <div className="d-flex justify-content-center mt-1">
+        <input
+          onChange={(event) => {
+            setRoom(event.target.value);
+          }}
+          placeholder="Input Room"
+          type="text"
+          className="form-control w-25 mb-3"
+        />
+      </div>
       <div className="d-flex justify-content-center">
         <Link
-          onClick={(event) => (!name ? event.preventDefault() : null)}
+          onClick={(event) => (!name && !room ? event.preventDefault() : null)}
           className="btn btn-info w-25"
-          to={`/home?name=${name}`}
+          to={`/home?name=${name}&room=${room}`}
         >
           Start
         </Link>
